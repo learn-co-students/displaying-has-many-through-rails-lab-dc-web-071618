@@ -1,0 +1,9 @@
+<h1>Doctors</h1>
+
+<!-- displays each doctor's name, a link to their show page, and a count of
+their patients. -->
+
+<% @doctors.each do |d| %>
+  <h3><%= link_to d.name, d %></h3>
+  <p><%= pluralize(d.appointments.count, 'appointment') %></p>
+<% end %>
