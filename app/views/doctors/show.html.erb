@@ -1,0 +1,13 @@
+<h1><%= @doctor.name %></h1>
+
+<h2><%= @doctor.department %></h2>
+
+<h3>Appointments</h3>
+
+<!-- displays the doctor's appointments, with each appointment's date, time,
+and patient name (linking to the patient's show page). -->
+
+<% @doctor.appointments.each do |a| %>
+  <h4><%= link_to a.patient.name, a.patient %></h4>
+  <p><%= a.display_datetime %></p>
+<% end %>
