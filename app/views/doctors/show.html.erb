@@ -1,0 +1,19 @@
+<h1>Dr. <%= @doctor.name %></h1>
+<h3>Deparment: <%= @doctor.department %></h3>
+<!-- shows all of a doctor's appointment times in a human readable format -->
+<% @doctor.appointments.each do |appt| %>
+  <li><%= appt.appointment_datetime.strftime("%B %d, %Y at %k:%M") %></li>
+<% end %><br>
+
+
+<!-- links to the patient's show page by name for each appointment -->
+
+<% @doctor.patients.each do |patient| %>
+       <li><%= link_to patient.name, patient_path(patient) %></li>
+<% end %><br>
+
+
+
+
+
+<%= link_to "Doctor Index Page", doctors_path %>
