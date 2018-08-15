@@ -1,0 +1,12 @@
+<h1>Welcome to Dr. <%= @doc.name %>'s Appointments Page</h1>
+
+<h2>Appointments:<br><br>
+<ul>
+<% @doc.appointments.each do |apt| %>
+
+<li>Dr. <%= @doc.name %> has an appointment with
+<%= link_to apt.patient.name, patient_path(apt.patient) %> on
+<%= apt.appointment_datetime.strftime('%B %d, %Y')%> at <%= apt.appointment_datetime.strftime("%R") %>.</li>
+
+<% end %>
+</h2>
