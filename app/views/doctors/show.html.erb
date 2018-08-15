@@ -5,8 +5,8 @@
 <% @doc.appointments.each do |apt| %>
 
 <li>Dr. <%= @doc.name %> has an appointment with
-<%= link_to apt.patient.name, patient_path(apt.patient) %> on
-<%= apt.appointment_datetime.strftime('%B %d, %Y')%> at <%= apt.appointment_datetime.strftime("%R") %>.</li>
+<%= link_to apt.ptnt_name, patient_path(apt.patient) %> on
+<%= apt.time %>.</li>
 
 <% end %>
 </h2>
